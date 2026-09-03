@@ -19,6 +19,8 @@ class Solution:
             return np.round(z, 5)
 
         elif activation == "sigmoid":
-            epsilon = 1e-7
-            z = 1 / (1 + np.exp(-z + epsilon))
-            return round(z, 5)
+            z = 1 / (1 + np.exp(-z))
+            return np.round(z, 5)
+
+        else:
+            raise ValueExeption(f"{activation_type} not a valid option")
